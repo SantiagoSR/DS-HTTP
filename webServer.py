@@ -25,13 +25,12 @@ import urllib.parse
 class Handler(BaseHTTPRequestHandler):
 
     def _set_response(self, url):
-        print(type(url))
-        print(url)
+        
         tiny_url = ""
         request_url = ('http://tinyurl.com/api-create.php?' + urlencode({'url':url}))
         with contextlib.closing(urlopen(request_url)) as response:
                 tiny_url = response.read().decode('utf-8 ')
-        print(tiny_url)
+       
         self.send_response(200)
         self.end_headers()
         response = tiny_url.encode('ascii')
