@@ -64,7 +64,7 @@ A gran escala, en la totalidad del proyecto, únicamente se implementaron las pa
   
   3. Se abre una conexión HTTP con el servidor llamando al puerto HTTP 3000 y se envia la petición con el comando GET o POST dependiendo del servicio.
   
-  4.El servidor devuelve la respuesta al cliente. Que Consiste en un código de estado y el tipo de dato MIME de la información de retorno, seguido de la propia información.
+  4. El servidor devuelve la respuesta al cliente. Que Consiste en un código de estado y el tipo de dato MIME de la información de retorno, seguido de la propia información.
   
   5. Se cierra la conexión. 
 
