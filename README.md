@@ -59,9 +59,13 @@ A gran escala, en la totalidad del proyecto, únicamente se implementaron las pa
 ### 5. Etapas de transacción del protocolo
 
   1. Un usuario solicita un servicio (REQUESTS, SHORT, QR, STATUS). La solicitud del servicio genera una URL con la informacion de la petición.
+  
   2. El servidor identifica el protocolo de acceso, la dirección DNS, el puerto y el objeto requerido del servidor.
+  
   3. Se abre una conexión HTTP con el servidor llamando al puerto HTTP 3000 y se envia la petición con el comando GET o POST dependiendo del servicio.
+  
   4.El servidor devuelve la respuesta al cliente. Que Consiste en un código de estado y el tipo de dato MIME de la información de retorno, seguido de la propia información.
+  
   5. Se cierra la conexión. 
 
  #### NOTA: Este proceso se repite en cada acceso al servidor.
