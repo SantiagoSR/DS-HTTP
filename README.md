@@ -34,6 +34,7 @@ La estructura general del protocolo se explica en el siguiente diagrama.
 
 ![image](https://user-images.githubusercontent.com/46933082/131228396-8004a577-9428-4661-aa9b-dc2ebcc012b8.png)
 
+![Anatomia de DS-HTTP](https://user-images.githubusercontent.com/46933085/131231869-d554ff62-f3b3-4226-8f1f-8537f334d1d2.png)
 
 
 
