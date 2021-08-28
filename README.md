@@ -50,14 +50,18 @@ Los errores en ShortyShell se manejan mediante la captura de excepciones, hay pr
 
 ### 4. Regla de protocolo
 
-Para la comunicacion entre los diferentes nodos y cliente, al manejarlo por un IPC de tipo independiente, el cual no se ve afectada la ejecuccion de los otros procesos mientras esta cooperando. El Inter-process comunication (IPC), es el mecanismo el cual nos permite cominicarnos y sincronizar las acciones entre los diferentes nodos. En nuestra arquitectura de comunicacion, estamos usando el protocolo HTTP, que se está soportado sobre los servicios de conexión TCP/IP. El protocolo funciona de la siguiente manera: un proceso servidor escucha en un puerto de comuniaciones TCP, y espera las solicitudes de conexión de los clientes Web. una vez se establece la conexión, el protocolo TCP se encarga de mantener la comunicación. El protocolo se basa en operaciones solicitud/respuesta. 
+Para la comunicacion entre los diferentes nodos y cliente, se utilizó un protocolo básico de comunicación construido sobre HTTP (concretamente las librerías request y http.server de python). Este mecanismo nos permite cominicarnos y sincronizar las acciones entre los diferentes nodos, manteniendo la ilusión de union para el cliente, es decir, el sistema a pesar de estar distribuido se comporta como si fuese un solo monolito de cara al usuario final. En nuestra arquitectura de comunicacion, estamos usando el protocolo HTTP, que se está soportado sobre los servicios de conexión TCP/IP. El protocolo funciona de la siguiente manera: un proceso servidor escucha en un puerto de comuniaciones, y espera las solicitudes de conexión de los clientes Web. una vez se establece la conexión, el protocolo se encarga de mantener la comunicación. El protocolo se basa en operaciones solicitud/respuesta. 
+  
+Otra decisión de arquitectura relevante es que los servidores de cara al cliente, pueden ser internamente clientes dentro de nuestro sistema. Por ejemplo, el cliente accede al servidor SHORTY que acorta su URL, sin embargo SHORTY hace peticiones como cliente a COUNT, para registrar la transacción realizada. Estas comunicaciones internas también se implementaron con el mismo protocolo.
+  
+A gran escala, en la totalidad del proyecto, únicamente se implementaron las palabras clave GET y POST, con estas se puedo estructurar completamente el protocolo de comunicación, ya que permiten cubrir todos los casos de uso de nuestro sistema como está planteado actualmetne.
 
 ### 5. Etapas de transacción del protocolo
 
   1. Un usuario solicita un servicio (REQUESTS, SHORT, QR, STATUS). La solicitud del servicio genera una URL con la informacion de la petición.
-  2. El Cliente identifica el protocolo de acceso, la dirección DNS, el puerto y el objeto requerido del servidor.
-  3. Se abre una conexión TCP/IP con el servidor llamando al puerto TCP 3000 y se envia la petición con el comando GET o POST dependiendo del servicio.
+  2. El servidor identifica el protocolo de acceso, la dirección DNS, el puerto y el objeto requerido del servidor.
+  3. Se abre una conexión HTTP con el servidor llamando al puerto HTTP 3000 y se envia la petición con el comando GET o POST dependiendo del servicio.
   4.El servidor devuelve la respuesta al cliente. Que Consiste en un código de estado y el tipo de dato MIME de la información de retorno, seguido de la propia información.
-  5. Se cierra la conexión TCP. 
+  5. Se cierra la conexión. 
 
  #### NOTA: Este proceso se repite en cada acceso al servidor.
