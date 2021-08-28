@@ -10,11 +10,11 @@ Reto numero 2 topicos especiales en telemática
 
 ## 1. Especificación del Servicio
 
-El presente es un servicio de acortar y verificar el status para links de internet. Esto se hizo con la intención de que el usuario pueda enviar los links al servidor para después generar unos más cortos y además tener el conocimiento de la pagina por terminal para su uso.
+El presente es un servicio de acortar, verificar el status y generar codigo binario de codigo QR para links de internet. Esto se hizo con la intención de que el usuario pueda enviar los links al servidor para después generar unos más cortos, tener el conocimiento de la pagina por terminal para su uso y tener el codigo QR de dicha pagina.
 
 Para efectos de facilidad de uso se desarrolló una shell interactiva llamada ShortyShell para el cliente, en la que se implementaron además de los comandos básicos de ShortyShell comandos de ayuda para el usuario. Estos comandos de ayuda listan la sintaxis correcta de cada una de estas operaciones y explican lo que cada una hace. Las instrucciones para llamar a estas ayudas son visibles cuando el cliente accede a ShortyShell.
 
-Finalmente, algunas consideraciones adicionales sobre el servicio. El comportamiento del servidor se presta para manejar a multiples clientes de manera concurrente por medio de threads, cada cliente puede conectarse y desconectarse del servidor en el momento que lo considere. Por último, para garantizar la transparencia en operaciones, tanto el servidor como el cliente generan un log en donde sus actividades son visibles y fácilmente rastreables.
+Finalmente, algunas consideraciones adicionales sobre el servicio. El comportamiento del servidor se presta para manejar a multiples clientes de manera concurrente por medio de threads, cada cliente puede conectarse y desconectarse del servidor en el momento que lo considere. Por último, para garantizar la transparencia en operaciones. (falta implementacion de LOG).
 
 
 ## 2. Vocabulario del Mensaje
@@ -25,6 +25,7 @@ ShortyShell utiliza una misma estructura de mensaje para todas sus comunicacione
 | SHORT <URL> | Recorta un URL  |
 | STATUS <URL> | Estado de la pagina |
 | REQUESTS | Lista todos los Requests hechos, teniendo en cuenta Request |
+| QR | Retorna el codigo binario de la pagina para sacar su QR  de este |
 | bye | termina la sesión |
 
 ## 3. Regla de Procedimientos
