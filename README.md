@@ -32,8 +32,7 @@ ShortyShell utiliza una misma estructura de mensaje para todas sus comunicacione
 
 La estructura general del protocolo se explica en el siguiente diagrama.
 
-
-![image](https://user-images.githubusercontent.com/46933082/129790308-1340b595-117c-4a87-a6fc-23c93e781fcf.png)
+![image](https://user-images.githubusercontent.com/46933082/131227181-43275d4b-06fa-4c43-995b-a954cb1b9eb4.png)
 
 
 
