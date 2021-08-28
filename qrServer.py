@@ -20,8 +20,7 @@ class QRHandler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write('Hello Cono!'.encode())
 
-    def do_POST(self):
-        #r = requests.post("http://ec2-54-165-183-13.compute-1.amazonaws.com:300                                                                                                             0")
+    def do_POST(self):                                                                                                        0")
         content_length = int(self.headers['Content-Length'])
         post_data = self.rfile.read(content_length)
         #Decodes passed info
