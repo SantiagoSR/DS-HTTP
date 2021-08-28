@@ -49,7 +49,7 @@ Los errores en ShortyShell se manejan mediante la captura de excepciones, hay pr
 
 ### 4. Regla de protocolo
 
-Para la comunicacion entre los diferentes nodos y cliente, al manejarlo por un IPC de tipo independiente, el cual no se ve afectada la ejecuccion de los otros procesos mientras esta cooperando. El Inter-process comunication (IPC), es el mecanismo el cual nos permite cominicarnos y sincronizar las acciones entre los diferentes nodos. En nuestra arquitectura de comunicacion, estamos usando el protocolo HTPP, que se está soportado sobre los servicios de conexión TCP/IP. El protocolo funciona de la siguiente manera: un proceso servidor escucha en un puerto de comuniaciones TCP, y espera las solicitudes de conexión de los clientes Web. una vez se establece la conexión, el protocolo TCP se encarga de mantener la comunicación. El protocolo se basa en operaciones solicitud/respuesta. 
+Para la comunicacion entre los diferentes nodos y cliente, al manejarlo por un IPC de tipo independiente, el cual no se ve afectada la ejecuccion de los otros procesos mientras esta cooperando. El Inter-process comunication (IPC), es el mecanismo el cual nos permite cominicarnos y sincronizar las acciones entre los diferentes nodos. En nuestra arquitectura de comunicacion, estamos usando el protocolo HTTP, que se está soportado sobre los servicios de conexión TCP/IP. El protocolo funciona de la siguiente manera: un proceso servidor escucha en un puerto de comuniaciones TCP, y espera las solicitudes de conexión de los clientes Web. una vez se establece la conexión, el protocolo TCP se encarga de mantener la comunicación. El protocolo se basa en operaciones solicitud/respuesta. 
 
 ### 5. Etapas de transacción del protocolo
 
