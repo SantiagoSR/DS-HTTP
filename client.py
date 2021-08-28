@@ -38,7 +38,7 @@ class ShortyShell(cmd.Cmd):
         STATUS(str(arg))
 
     def do_REQUESTS(self, arg):
-        'Generates STATUS based on URL: STATUS <URL> '
+        'Generates STATUS based on URL: REQUESTS <URL> '
         REQUESTS()
     
     def do_SHORTY(self, arg):
